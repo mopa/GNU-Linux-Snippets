@@ -36,6 +36,16 @@ ionice ncdu -x -r
 find Documents -size +500M -ls | sort -k7nr | less 
 ```
 
++ Search folders
+```bash
+find . -type d -iname 'docker*'
+```
+
++ Print a count of the number of empty files under the current directory
+```bash
+find . -type f -empty | wc -l
+```
+
 + This will run the ls command without using any alias called ls that might be set. You can do this with any real command. Another way to do this is with command ls.
 ```bash
 \ls 
@@ -51,13 +61,13 @@ comm -3 <(ls dir1) <(ls dir2)
 du -ma | sort -nr | head -n 20 
 ```
 
-+ Search folders
-```bash
-find . -type d -iname 'docker*'
-```
 
 + Make a backup with date
 ```bash
 sudo cp /etc/sudoers{,.backup_$(date +%Y%m%d)}
 ```
 
++ Sheesh! How many columns does this CSV file have anyways? For the first line, just print out the count of fields. Thanks awk.
+```bash
+awk -F, 'NR==1{print NF}' total_cases.csv 
+```

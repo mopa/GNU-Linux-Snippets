@@ -29,3 +29,8 @@ paste <(cal 2020) <(cal 2021)
 ```bash
 exiftool -v '-Directory<DateTimeOriginal' -d %Y . 
 ```
+
++ Use a for loop and pwgen to quickly create a list of 50 users numbered 01 through 50 and a unique random strong password for each one, saving the output to a file named users.txt
+```bash
+for i in user{01..50} ; do echo "$i $( pwgen 16 1 )" ; done > users.txt
+```
