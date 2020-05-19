@@ -10,14 +10,7 @@ nmap --open -p T:22 192.168.1.0/24
 nmap -p -1000 192.168.1.1
 ```
 
-+ List open ports and the app or service that use it
-```bash
-ss -tulpn
-
-# In Real Time
-watch ss -tulpn
-```
-
++ List open ports and the app or service would use it
 
 + Look through the last 9 compressed firewall log files in chronological order (reverse numerical by logrotate) and the current one for hits to port 8728 and generate daily hit stats.
 ```bash
