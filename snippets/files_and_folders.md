@@ -71,3 +71,9 @@ sudo cp /etc/sudoers{,.backup_$(date +%Y%m%d)}
 ```bash
 awk -F, 'NR==1{print NF}' total_cases.csv 
 ```
+
+
++ Create dirs and subdirs from a text file
+```bash
+sudo xargs -I{} mkdir -p "{}" < dirs.txt
+```
