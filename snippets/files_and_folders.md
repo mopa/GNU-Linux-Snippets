@@ -77,3 +77,8 @@ awk -F, 'NR==1{print NF}' total_cases.csv
 ```bash
 sudo xargs -I{} mkdir -p "{}" < dirs.txt
 ```
+
++ Generate an ordered list of the sizes hidden directories in the current directory
+```bash
+du -sh .[^\.]*/ ..?* | sort -h
+````
