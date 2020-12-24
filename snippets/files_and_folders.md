@@ -82,3 +82,9 @@ sudo xargs -I{} mkdir -p "{}" < dirs.txt
 ```bash
 du -sh .[^\.]*/ ..?* | sort -h
 ````
+
+
++ Sort your video files by duration instead of size
+```bash
+for file in *; do echo -n "$file "; if output=$(ffprobe -v error -show_format_entry duration -sexagesimal "$file" 2>/dev/null); then echo ${output%???}; else  echo "???"; fi;  done | sort -rk2 | column -t
+```
