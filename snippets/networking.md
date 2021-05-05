@@ -1,5 +1,10 @@
 # Networking Snippets
 
++ What is my IP?
+```bash
+curl -silent -L http://checkip.amazonaws.com |tail -n 1
+```
+
 + Scan your internal home network for hosts listening on TCP port 22 (SSH protocol).
 ```bash
 nmap --open -p T:22 192.168.1.0/24 
