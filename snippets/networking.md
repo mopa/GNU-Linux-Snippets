@@ -10,6 +10,11 @@ curl -silent -L http://checkip.amazonaws.com |tail -n 1
 nmap --open -p T:22 192.168.1.0/24 
 ```
 
++ Ping for internal home network.
+```bash
+nmap -sP 192.168.1.1-254
+```
+
 + Scan the first 1000 ports for the especify IP
 ```bash
 nmap -p -1000 192.168.1.1
