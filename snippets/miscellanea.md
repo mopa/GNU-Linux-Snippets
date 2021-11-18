@@ -34,3 +34,8 @@ exiftool -v '-Directory<DateTimeOriginal' -d %Y .
 ```bash
 for i in user{01..50} ; do echo "$i $( pwgen 16 1 )" ; done > users.txt
 ```
+
++ Clean the history list and history file
+```bash
+history -c -w
+```
