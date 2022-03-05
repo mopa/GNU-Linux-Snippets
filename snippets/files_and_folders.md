@@ -88,3 +88,8 @@ du -sh .[^\.]*/ ..?* | sort -h
 ```bash
 for file in *; do echo -n "$file "; if output=$(ffprobe -v error -show_format_entry duration -sexagesimal "$file" 2>/dev/null); then echo ${output%???}; else  echo "???"; fi;  done | sort -rk2 | column -t
 ```
+
++ Find the largest files in use
+```bash
+lsof | grep REG | grep -v "stat: No such file or directory" | grep -v DEL | awk '{if ($NF=="(deleted)") {x=3;y=1} else {x=2;y=0}; {print $(NF-x) " " $(NF-y) } }' | sort -n -u | numfmt --field=1 --to=iec
+```
